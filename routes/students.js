@@ -165,7 +165,7 @@ router
     try {
       const { query: { id } } = req
       const result = await deleteStudent(id)
-      const studentList = await findStudents(id)
+      const studentList = await findStudents()
       res.status(200).json({
         msg: "student eliminado",
         body: studentList,
