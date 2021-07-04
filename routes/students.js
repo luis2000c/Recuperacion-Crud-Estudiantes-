@@ -165,9 +165,10 @@ router
     try {
       const { query: { id } } = req
       const result = await deleteStudent(id)
+      const studentList = await findStudents(id)
       res.status(200).json({
         msg: "student eliminado",
-        body: result,
+        body: studentList,
       });
     } catch (error) {
       res.status(500).json({
